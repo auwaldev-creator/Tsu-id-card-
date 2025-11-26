@@ -1,0 +1,114 @@
+:root {
+  --bg: #f3f5f9;
+  --primary: #0b5fff;
+  --navy: #073b9a;
+  --muted: #6b7280;
+  --card-width: 820px; /* width used for HTML2Canvas scaling; PDF will scale down */
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  background: var(--bg);
+  color: #111827;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 18px;
+  align-items: start;
+  padding: 12px;
+}
+
+.form {
+  background: #fff;
+  padding: 14px;
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(2,6,23,0.06);
+}
+
+.form h2 { margin: 0 0 10px 0; color: var(--navy); }
+.field { margin-bottom: 10px; }
+.label { font-size: 13px; color: var(--muted); margin-bottom: 6px; display:block; }
+.input, .textarea, select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #e6e9ef;
+  font-size: 14px;
+}
+
+.controls { display:flex; gap:8px; margin-top:10px; flex-wrap:wrap; }
+.btn { background: var(--primary); color: white; padding:10px 12px; border-radius:8px; border: none; cursor:pointer; font-weight:600; }
+.secondary { background: #fff; color: var(--primary); border: 1px solid var(--primary); }
+
+.previewArea { background: transparent; display:flex; flex-direction:column; gap:10px; align-items:center; }
+
+.previewTitle { font-weight:700; color:var(--navy); margin-bottom:6px; }
+
+.previewWrap { background: #eaf2ff; padding: 18px; border-radius: 10px; }
+
+.id-card {
+  width: var(--card-width);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 12px 30px rgba(2,6,23,0.08);
+  color: #111827;
+  font-size: 14px;
+}
+
+/* FRONT */
+.id-card-front .card-top {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  background: linear-gradient(90deg, #073b9a, #0b5fff);
+  color: #fff;
+  padding: 12px 16px;
+}
+.logoWrap img { width:72px; height:72px; object-fit:contain; border-radius:8px; background: #fff; padding:6px; }
+.schoolName { font-weight:700; }
+.schoolName-main { font-size:20px; }
+.school-tag { font-size:12px; opacity:0.9; }
+
+.card-body { display:flex; gap:18px; padding: 16px; align-items:center; }
+.photoFrame { width:140px; height:140px; border-radius:8px; overflow:hidden; border:5px solid #fff; display:flex; align-items:center; justify-content:center; background:#f3f4f6; }
+.photoFrame img { width:100%; height:100%; object-fit:cover; }
+.photoPlaceholder { color: #9aa0a6; }
+
+.infoWrap { flex:1; display:flex; flex-direction:column; gap:8px; }
+.name { font-size:20px; font-weight:700; color:#0b2140; }
+.matric { color: #0b5fff; font-weight:700; }
+.dept { color: #333; }
+.meta { display:flex; gap:12px; color: #6b7280; }
+
+.card-bottom { display:flex; align-items:center; justify-content:space-between; padding:12px 16px; border-top:1px dashed #eef3ff; background:#fff; }
+.sigBox img { height:40px; object-fit:contain; }
+.footerText { color:#6b7280; font-size:13px; }
+
+/* BACK */
+.id-card-back { padding:12px; background: linear-gradient(180deg,#f8fafc,#fff); }
+.back-header { display:flex; gap:12px; align-items:center; }
+.logoSmall img { width:56px; height:56px; object-fit:contain; }
+.back-title { font-size:18px; font-weight:700; }
+.back-tag { color:#6b7280; font-size:12px; }
+
+.back-body { margin-top:12px; color:#333; }
+.back-body h4 { margin:8px 0; }
+.back-sign { display:flex; gap:12px; margin-top:12px; align-items:center; }
+.back-sign-box { width:200px; height:60px; border:1px solid #e6e9ef; display:flex; align-items:center; justify-content:center; }
+.back-dept { font-size:12px; color:#6b7280; }
+
+/* small */
+.small-muted { font-size:12px; color:#6b7280; }
+
+/* responsive */
+@media (max-width: 900px) {
+  .container { grid-template-columns: 1fr; padding:12px; }
+  :root { --card-width: 600px; }
+  }
